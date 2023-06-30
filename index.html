@@ -56,8 +56,8 @@
         <button id="closeBtn" class="btn btn-danger btn-trace">
           <i class="bi bi-chevron-double-left"></i> Close
         </button>
-        <button id="resizeBtn" class="btn btn-primary btn-trace">
-          <i class="fa-sharp fa-solid fa-maximize"></i> Resize
+        <button id="editBtn" class="btn btn-primary btn-trace">
+          <i class="fa-solid fa-pen-to-square"></i> Edit
         </button>
         <video id="webCam" autoplay playsinlne></video>
         <div
@@ -66,28 +66,24 @@
           width="100%"
         ></div>
         <div id="setImage" class="d-none d-flex justify-content-center">
-          <div class="rounded resize">
-            <div class="d-flex">
-              <div class="input-group p-3">
-                <input
-                  type="number"
-                  class="form-control shadow-none"
-                  placeholder="Width"
-                  id="widthImgToTrace"
-                />
-                <span class="input-group-text">px</span>
-              </div>
-              <div class="input-group p-3">
-                <input
-                  type="number"
-                  class="form-control shadow-none"
-                  placeholder="Height"
-                  id="heightImgToTrace"
-                />
-                <span class="input-group-text">px</span>
-              </div>
+          <div class="rounded edit">
+            <div>
+              <label for="widthImgToTrace" class="form-label mb-1">
+                Width <span id="numWidth"></span>px
+              </label>
+              <input
+                type="range"
+                class="form-range"
+                min="0"
+                max="500"
+                value="0"
+                id="widthImgToTrace"
+              />
             </div>
             <div>
+              <label for="opacityRange" class="form-label mb-1">
+                Opacity <span id="numOpacity">50</span>%
+              </label>
               <input
                 type="range"
                 class="form-range"

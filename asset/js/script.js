@@ -33,7 +33,7 @@ const traceBtn = document.getElementById("traceBtn");
 const closeBtn = document.getElementById("closeBtn");
 const imgToTrace = document.getElementById("imgToTrace");
 const widthImgToTrace = document.getElementById("widthImgToTrace");
-const heightImgToTrace = document.getElementById("heightImgToTrace");
+const numWidth = document.getElementById("numWidth");
 const webCamElement = document.getElementById("webCam");
 const webcam = new Webcam(webCamElement, "user");
 
@@ -43,7 +43,7 @@ traceBtn.addEventListener("click", function () {
   imgToTrace.innerHTML = imagePreview.innerHTML;
   traceWebCam.style.display = "block";
   widthImgToTrace.value = imgToTrace.children[0].width;
-  heightImgToTrace.value = imgToTrace.children[0].height;
+  numWidth.textContent = widthImgToTrace.value;
 });
 
 closeBtn.addEventListener("click", function () {
@@ -54,22 +54,21 @@ closeBtn.addEventListener("click", function () {
 });
 
 // setting image to trace
-const resizeBtn = document.getElementById("resizeBtn");
+const editBtn = document.getElementById("editBtn");
 const setImageElement = document.getElementById("setImage");
 const opacityRange = document.getElementById("opacityRange");
+const numOpacity = document.getElementById("numOpacity");
 
 opacityRange.addEventListener("change", function () {
   imgToTrace.children[0].style.opacity = parseInt(opacityRange.value) / 100;
+  numOpacity.textContent = opacityRange.value;
 });
 
 widthImgToTrace.addEventListener("change", function () {
   imgToTrace.children[0].style.width = widthImgToTrace.value + "px";
+  numWidth.textContent = widthImgToTrace.value;
 });
 
-heightImgToTrace.addEventListener("change", function () {
-  imgToTrace.children[0].style.height = heightImgToTrace.value + "px";
-});
-
-resizeBtn.addEventListener("click", function () {
+editBtn.addEventListener("click", function () {
   setImageElement.classList.toggle("d-none");
 });
