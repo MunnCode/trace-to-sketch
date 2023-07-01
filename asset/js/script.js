@@ -35,7 +35,7 @@ const imgToTrace = document.getElementById("imgToTrace");
 const widthImgToTrace = document.getElementById("widthImgToTrace");
 const numWidth = document.getElementById("numWidth");
 const webCamElement = document.getElementById("webCam");
-const webcam = new Webcam(webCamElement, "user");
+const webcam = new Webcam(webCamElement, "enviroment");
 
 traceBtn.addEventListener("click", function () {
   menu.style.display = "none";
