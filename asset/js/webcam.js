@@ -59,7 +59,9 @@ class Webcam {
   }
   flip() {
     (this._facingMode = "user" == this._facingMode ? "enviroment" : "user"),
-      (this._webcamElement.style.transform = ""),
+      this._webcamElement.classList.contains("flip")
+        ? (this._webcamElement.style.transform = "scale(-1,1)")
+        : (this._webcamElement.style.transform = ""),
       this.selectCamera();
   }
   async start(e = !0) {

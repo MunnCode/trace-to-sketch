@@ -80,6 +80,7 @@ body {
     position: absolute;
     z-index: 2;
     opacity: 0.5;
+    cursor: pointer;
   }
 
   .btn-trace:hover {
@@ -94,4 +95,9 @@ body {
   #editBtn {
     top: 15px;
     right: 15px;
+  }
+
+  #flipCamera {
+    top: 15px;
+    left: 50%;
   }

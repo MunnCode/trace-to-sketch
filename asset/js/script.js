@@ -72,3 +72,9 @@ widthImgToTrace.addEventListener("change", function () {
 editBtn.addEventListener("click", function () {
   setImageElement.classList.toggle("d-none");
 });
+
+// flip camera
+document.getElementById("flipCamera").addEventListener("click", function () {
+  webcam.flip();
+  webcam._webcamElement.classList.toggle("flip");
+});
